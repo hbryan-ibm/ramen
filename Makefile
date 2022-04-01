@@ -125,7 +125,7 @@ else ifneq ($(GOLANGCI_VERSION),$(GOLANGCI_INSTALLED_VER))
 endif
 
 .PHONY: lint
-lint: golangci-bin ## Run configured golangci-lint and pre-commit.sh linters against the code.
+lint: golangci-bin generate ## Run configured golangci-lint and pre-commit.sh linters against the code.
 	testbin/golangci-lint run ./... 
 	hack/pre-commit.sh
 
